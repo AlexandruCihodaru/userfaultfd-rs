@@ -42,7 +42,7 @@ impl EventBuffer {
 /// The userspace representation of the object is a file descriptor, so this type implements
 /// `AsRawFd`, `FromRawFd`, and `IntoRawFd`. These methods should be used with caution, but can be
 /// essential for using functions like `poll` on a worker thread.
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Uffd {
     fd: RawFd,
 }
